@@ -8,48 +8,19 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
-  --bg: #f0f4ff;
-  --surface: #ffffff;
-  --surface2: #e8eeff;
-  --blue-1: #3b82f6;
-  --blue-2: #1d4ed8;
-  --blue-3: #0ea5e9;
-  --accent: #60a5fa;
-  --accent2: #38bdf8;
-  --dark: #0a0f1e;
-  --dark2: #111827;
-  --text: #0f172a;
-  --text2: #334155;
-  --text3: #64748b;
-  --white: #ffffff;
-  --glass: rgba(255,255,255,0.6);
-  --glass2: rgba(255,255,255,0.85);
-  --border: rgba(59,130,246,0.18);
-  --shadow: 0 20px 60px rgba(59,130,246,0.12);
-  --shadow2: 0 4px 24px rgba(59,130,246,0.18);
-  --radius: 20px;
-  --radius2: 12px;
-  --font-head: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-
-  /* Niche accent colors */
-  --food-accent: #f97316;
-  --food-light: rgba(249,115,22,0.08);
-  --food-border: rgba(249,115,22,0.22);
-
-  --bev-accent: #06b6d4;
-  --bev-light: rgba(6,182,212,0.08);
-  --bev-border: rgba(6,182,212,0.22);
-
-  --cloth-accent: #a855f7;
-  --cloth-light: rgba(168,85,247,0.08);
-  --cloth-border: rgba(168,85,247,0.22);
-
-  --skin-accent: #ec4899;
-  --skin-light: rgba(236,72,153,0.08);
-  --skin-border: rgba(236,72,153,0.22);
+  --bg: #f0f4ff; --surface: #ffffff; --surface2: #e8eeff;
+  --blue-1: #3b82f6; --blue-2: #1d4ed8; --blue-3: #0ea5e9;
+  --accent: #60a5fa; --accent2: #38bdf8; --dark: #0a0f1e; --dark2: #111827;
+  --text: #0f172a; --text2: #334155; --text3: #64748b; --white: #ffffff;
+  --glass: rgba(255,255,255,0.6); --glass2: rgba(255,255,255,0.85);
+  --border: rgba(59,130,246,0.18); --shadow: 0 20px 60px rgba(59,130,246,0.12);
+  --shadow2: 0 4px 24px rgba(59,130,246,0.18); --radius: 20px; --radius2: 12px;
+  --font-head: 'Syne', sans-serif; --font-body: 'DM Sans', sans-serif;
+  --food-accent: #f97316; --food-light: rgba(249,115,22,0.08); --food-border: rgba(249,115,22,0.22);
+  --bev-accent: #06b6d4; --bev-light: rgba(6,182,212,0.08); --bev-border: rgba(6,182,212,0.22);
+  --cloth-accent: #a855f7; --cloth-light: rgba(168,85,247,0.08); --cloth-border: rgba(168,85,247,0.22);
+  --skin-accent: #ec4899; --skin-light: rgba(236,72,153,0.08); --skin-border: rgba(236,72,153,0.22);
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: var(--font-body); background: var(--bg); color: var(--text); overflow-x: hidden; line-height: 1.6; }
@@ -59,17 +30,14 @@ ul { list-style: none; }
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--blue-1); border-radius: 3px; }
 
-/* BG ORBS */
 .bg-orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; animation: orbFloat 12s ease-in-out infinite alternate; }
 .orb1 { width: 600px; height: 600px; background: rgba(59,130,246,0.10); top: -100px; left: -150px; }
 .orb2 { width: 400px; height: 400px; background: rgba(14,165,233,0.08); top: 30%; right: -100px; animation-delay: -4s; }
 .orb3 { width: 500px; height: 500px; background: rgba(29,78,216,0.06); bottom: 10%; left: 20%; animation-delay: -8s; }
 @keyframes orbFloat { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(30px,40px) scale(1.08); } }
 
-/* NOISE */
 body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.4; }
 
-/* NAV */
 nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; padding: 18px 5%; display: flex; align-items: center; justify-content: space-between; backdrop-filter: blur(20px) saturate(1.8); background: rgba(240,244,255,0.75); border-bottom: 1px solid var(--border); transition: all 0.4s; }
 nav.scrolled { padding: 12px 5%; background: rgba(255,255,255,0.92); box-shadow: 0 4px 30px rgba(59,130,246,0.1); }
 .nav-logo { font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; letter-spacing: -0.03em; background: linear-gradient(135deg, var(--blue-2), var(--blue-3)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; cursor: pointer; }
@@ -83,13 +51,11 @@ nav.scrolled { padding: 12px 5%; background: rgba(255,255,255,0.92); box-shadow:
 .nav-cta::after { display: none !important; }
 .hamburger { display: none; cursor: pointer; font-size: 1.4rem; color: var(--text); }
 
-/* MOBILE MENU */
 .mobile-menu { position: fixed; inset: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
 .mobile-menu.open { opacity: 1; pointer-events: all; }
 .mobile-menu a { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; color: var(--text); cursor: pointer; }
 .mobile-menu .close-btn { position: absolute; top: 24px; right: 24px; font-size: 1.5rem; cursor: pointer; color: var(--text3); }
 
-/* HERO SECTION */
 .gallery-hero { padding: 140px 5% 70px; text-align: center; max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
 .section-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.2); color: var(--blue-1); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 1.2rem; }
 .gallery-hero h1 { font-family: var(--font-head); font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
@@ -97,7 +63,6 @@ nav.scrolled { padding: 12px 5%; background: rgba(255,255,255,0.92); box-shadow:
 @keyframes gradShift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 .gallery-hero p { font-size: 1.1rem; color: var(--text2); line-height: 1.7; max-width: 560px; margin: 0 auto 2rem; }
 
-/* FILTER TABS */
 .filter-wrap { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 3rem; position: relative; z-index: 1; padding: 0 5%; }
 .filter-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s; border: 1.5px solid var(--border); background: white; color: var(--text2); font-family: var(--font-body); }
 .filter-btn i { font-size: 0.9rem; }
@@ -108,25 +73,20 @@ nav.scrolled { padding: 12px 5%; background: rgba(255,255,255,0.92); box-shadow:
 .filter-btn[data-filter="clothing"].active { background: linear-gradient(135deg, #a855f7, #7c3aed); box-shadow: 0 6px 24px rgba(168,85,247,0.38); }
 .filter-btn[data-filter="skincare"].active { background: linear-gradient(135deg, #ec4899, #db2777); box-shadow: 0 6px 24px rgba(236,72,153,0.38); }
 
-/* STATS STRIP */
 .stats-strip { display: flex; justify-content: center; gap: 3rem; padding: 0 5% 3rem; flex-wrap: wrap; position: relative; z-index: 1; }
 .stat-pill { text-align: center; }
 .stat-pill .num { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; color: var(--blue-2); }
 .stat-pill .lbl { font-size: 0.78rem; color: var(--text3); margin-top: 2px; }
 
-/* NICHE SECTIONS */
 .gallery-page { position: relative; z-index: 1; padding-bottom: 80px; }
-
 .niche-section { padding: 0 5% 80px; max-width: 1300px; margin: 0 auto; }
 .niche-section.hidden { display: none; }
-
 .niche-header { display: flex; align-items: center; gap: 1.2rem; margin-bottom: 2.2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border); }
 .niche-icon-wrap { width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
 .niche-icon-food { background: var(--food-light); color: var(--food-accent); border: 1px solid var(--food-border); }
 .niche-icon-bev { background: var(--bev-light); color: var(--bev-accent); border: 1px solid var(--bev-border); }
 .niche-icon-cloth { background: var(--cloth-light); color: var(--cloth-accent); border: 1px solid var(--cloth-border); }
 .niche-icon-skin { background: var(--skin-light); color: var(--skin-accent); border: 1px solid var(--skin-border); }
-
 .niche-title-wrap h2 { font-family: var(--font-head); font-size: 1.6rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; }
 .niche-title-wrap p { font-size: 0.85rem; color: var(--text3); margin-top: 3px; }
 .niche-count { margin-left: auto; font-family: var(--font-head); font-size: 0.75rem; font-weight: 700; padding: 5px 14px; border-radius: 50px; letter-spacing: 0.05em; text-transform: uppercase; flex-shrink: 0; }
@@ -135,59 +95,46 @@ nav.scrolled { padding: 12px 5%; background: rgba(255,255,255,0.92); box-shadow:
 .count-cloth { background: var(--cloth-light); color: var(--cloth-accent); border: 1px solid var(--cloth-border); }
 .count-skin { background: var(--skin-light); color: var(--skin-accent); border: 1px solid var(--skin-border); }
 
-/* MASONRY-STYLE GRID */
 .img-grid { display: grid; gap: 16px; }
 .img-grid-7 { grid-template-columns: repeat(4, 1fr); grid-template-rows: auto; }
 .img-grid-8 { grid-template-columns: repeat(4, 1fr); }
 .img-grid-4 { grid-template-columns: repeat(4, 1fr); }
 .img-grid-6 { grid-template-columns: repeat(3, 1fr); }
 
-/* Featured (larger) items */
 .img-grid-7 .img-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
 .img-grid-7 .img-item:nth-child(4) { grid-column: span 2; }
 .img-grid-8 .img-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
 .img-grid-8 .img-item:nth-child(5) { grid-column: span 2; }
 
-/* IMAGE CARD */
 .img-item { position: relative; overflow: hidden; border-radius: var(--radius2); background: var(--surface2); cursor: pointer; border: 1px solid transparent; transition: all 0.4s cubic-bezier(0.23,1,0.32,1); }
 .img-item:hover { transform: translateY(-5px) scale(1.01); box-shadow: 0 24px 60px rgba(0,0,0,0.14); }
-
 .img-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.23,1,0.32,1); min-height: 200px; }
 .img-item:hover img { transform: scale(1.06); }
 
-/* Colored borders on hover per niche */
 .niche-food .img-item:hover { border-color: var(--food-border); box-shadow: 0 20px 50px rgba(249,115,22,0.18); }
 .niche-bev .img-item:hover { border-color: var(--bev-border); box-shadow: 0 20px 50px rgba(6,182,212,0.18); }
 .niche-cloth .img-item:hover { border-color: var(--cloth-border); box-shadow: 0 20px 50px rgba(168,85,247,0.18); }
 .niche-skin .img-item:hover { border-color: var(--skin-border); box-shadow: 0 20px 50px rgba(236,72,153,0.18); }
 
-/* Overlay on hover */
 .img-overlay { position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s; display: flex; align-items: flex-end; padding: 20px; }
 .img-item:hover .img-overlay { opacity: 1; }
 .overlay-food { background: linear-gradient(to top, rgba(249,115,22,0.75) 0%, transparent 60%); }
 .overlay-bev { background: linear-gradient(to top, rgba(6,182,212,0.75) 0%, transparent 60%); }
 .overlay-cloth { background: linear-gradient(to top, rgba(168,85,247,0.75) 0%, transparent 60%); }
 .overlay-skin { background: linear-gradient(to top, rgba(236,72,153,0.75) 0%, transparent 60%); }
-
 .overlay-label { color: white; font-size: 0.78rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
-.overlay-label i { font-size: 0.8rem; }
 
-/* FIXED HEIGHT for grid items */
 .img-grid-7 .img-item { height: 220px; }
 .img-grid-7 .img-item:nth-child(1) { height: 456px; }
 .img-grid-7 .img-item:nth-child(4) { height: 220px; }
-
 .img-grid-8 .img-item { height: 200px; }
 .img-grid-8 .img-item:nth-child(1) { height: 416px; }
 .img-grid-8 .img-item:nth-child(5) { height: 200px; }
-
 .img-grid-4 .img-item { height: 340px; }
 .img-grid-6 .img-item { height: 280px; }
 
-/* DIVIDER */
 .niche-divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); margin: 0 auto 80px; max-width: 1300px; padding: 0 5%; }
 
-/* LIGHTBOX */
 .lightbox { position: fixed; inset: 0; background: rgba(10,15,30,0.92); z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; backdrop-filter: blur(12px); }
 .lightbox.open { opacity: 1; pointer-events: all; }
 .lightbox-inner { position: relative; max-width: 90vw; max-height: 88vh; display: flex; align-items: center; justify-content: center; }
@@ -201,21 +148,19 @@ nav.scrolled { padding: 12px 5%; background: rgba(255,255,255,0.92); box-shadow:
 .lightbox-caption { position: absolute; bottom: -44px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.55); font-size: 0.8rem; white-space: nowrap; }
 .lightbox-counter { position: absolute; top: -44px; left: 0; color: rgba(255,255,255,0.45); font-size: 0.78rem; font-family: var(--font-head); font-weight: 700; }
 
-/* FOOTER CTA */
 .gallery-cta { padding: 0 5% 80px; position: relative; z-index: 1; }
 .gallery-cta-inner { max-width: 900px; margin: 0 auto; }
 .cta-card { background: linear-gradient(135deg, #1d4ed8, #0ea5e9); border-radius: 32px; padding: 60px 50px; color: white; position: relative; overflow: hidden; box-shadow: 0 40px 100px rgba(29,78,216,0.3); display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
 .cta-card::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; background: rgba(255,255,255,0.06); border-radius: 50%; }
 .cta-card h2 { font-family: var(--font-head); font-size: 2rem; font-weight: 800; line-height: 1.15; }
 .cta-card p { font-size: 0.95rem; opacity: 0.8; margin: 0.7rem 0 0; line-height: 1.6; }
-.cta-card-actions { display: flex; gap: 1rem; flex-direction: column; position: relative; z-index: 1; }
-.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 13px 26px; border-radius: 50px; font-weight: 600; font-size: 0.9rem; cursor: pointer; transition: all 0.3s; border: none; font-family: var(--font-body); white-space: nowrap; }
+.cta-card-actions { display: flex; gap: 0.8rem; flex-direction: column; position: relative; z-index: 1; }
+.btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 13px 22px; border-radius: 50px; font-weight: 600; font-size: 0.88rem; cursor: pointer; transition: all 0.3s; border: none; font-family: var(--font-body); white-space: nowrap; }
 .btn-white { background: white; color: var(--blue-2); }
 .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
 .btn-outline-white { background: rgba(255,255,255,0.1); color: white; border: 1.5px solid rgba(255,255,255,0.3); }
 .btn-outline-white:hover { background: rgba(255,255,255,0.2); }
 
-/* FOOTER */
 footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5% 30px; position: relative; z-index: 1; }
 .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
 .footer-brand .logo { font-family: var(--font-head); font-size: 2rem; font-weight: 800; color: white; margin-bottom: 12px; }
@@ -232,29 +177,25 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
 .footer-bottom-links a { color: rgba(255,255,255,0.3); transition: color 0.3s; }
 .footer-bottom-links a:hover { color: var(--accent); }
 
-/* STICKY CTA */
 .sticky-cta { position: fixed; bottom: 24px; right: 24px; z-index: 998; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
 .sticky-btn { display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--blue-1), var(--blue-2)); color: white; padding: 12px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; box-shadow: 0 8px 30px rgba(59,130,246,0.4); cursor: pointer; transition: all 0.3s; border: none; font-family: var(--font-body); }
 .sticky-btn:hover { transform: translateY(-3px) scale(1.05); }
 .sticky-btn.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); box-shadow: 0 8px 30px rgba(37,211,102,0.4); }
 
-/* ANIMATIONS */
 @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
 .gallery-hero { animation: fadeUp 0.8s 0.2s both; }
 .filter-wrap { animation: fadeUp 0.8s 0.4s both; }
 .stats-strip { animation: fadeUp 0.8s 0.5s both; }
-
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.23,1,0.32,1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-delay-1{transition-delay:0.1s} .reveal-delay-2{transition-delay:0.2s} .reveal-delay-3{transition-delay:0.3s}
 
-/* RESPONSIVE */
 @media (max-width: 1024px) {
   .img-grid-7, .img-grid-8 { grid-template-columns: repeat(3, 1fr); }
   .img-grid-7 .img-item:nth-child(1) { height: 330px; }
   .img-grid-8 .img-item:nth-child(1) { height: 300px; }
   .cta-card { grid-template-columns: 1fr; }
-  .cta-card-actions { flex-direction: row; }
+  .cta-card-actions { flex-direction: row; flex-wrap: wrap; }
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
@@ -278,7 +219,6 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
 <div class="bg-orb orb2"></div>
 <div class="bg-orb orb3"></div>
 
-<!-- NAV -->
 <nav id="navbar">
   <a href="index.html" class="nav-logo">CRAV</a>
   <ul class="nav-links">
@@ -288,12 +228,11 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
     <li><a href="index.html#pricing">Pricing</a></li>
     <li><a href="gallery.html" class="active-link">Gallery</a></li>
     <li><a href="index.html#reviews">Reviews</a></li>
-    <li><a href="index.html#contact" class="nav-cta">Book a Call</a></li>
+    <li><a href="tel:9869177325" class="nav-cta"><i class="fa fa-phone"></i> Call Now</a></li>
   </ul>
   <div class="hamburger" id="hamburger"><i class="fa fa-bars"></i></div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <span class="close-btn" id="closeMenu"><i class="fa fa-times"></i></span>
   <a href="index.html#services" onclick="closeMobile()">Services</a>
@@ -301,19 +240,17 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
   <a href="index.html#process" onclick="closeMobile()">Process</a>
   <a href="index.html#pricing" onclick="closeMobile()">Pricing</a>
   <a href="gallery.html" onclick="closeMobile()">Gallery</a>
-  <a href="index.html#contact" class="btn btn-white" onclick="closeMobile()">Book a Call</a>
+  <a href="tel:9869177325" class="btn btn-white" onclick="closeMobile()"><i class="fa fa-phone"></i> Call Now</a>
 </div>
 
 <div class="gallery-page">
 
-  <!-- HERO -->
   <div class="gallery-hero">
     <div class="section-tag"><i class="fa fa-images"></i> Our Work</div>
     <h1>Creative Work That<br><span class="gradient-text">Drives Results</span></h1>
     <p>From food brands to fashion labels — explore the content we've crafted for real brands across India.</p>
   </div>
 
-  <!-- STATS STRIP -->
   <div class="stats-strip">
     <div class="stat-pill"><div class="num">4</div><div class="lbl">Niches Covered</div></div>
     <div class="stat-pill"><div class="num">25+</div><div class="lbl">Creatives Shown</div></div>
@@ -321,7 +258,6 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
     <div class="stat-pill"><div class="num">500+</div><div class="lbl">Total Assets Made</div></div>
   </div>
 
-  <!-- FILTER TABS -->
   <div class="filter-wrap">
     <button class="filter-btn active" data-filter="all" onclick="filterGallery('all', this)"><i class="fa fa-border-all"></i> All Work</button>
     <button class="filter-btn" data-filter="food" onclick="filterGallery('food', this)"><i class="fa fa-utensils"></i> Food</button>
@@ -330,7 +266,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
     <button class="filter-btn" data-filter="skincare" onclick="filterGallery('skincare', this)"><i class="fa fa-spa"></i> Skin Care</button>
   </div>
 
-  <!-- ===== FOOD SECTION ===== -->
+  <!-- FOOD SECTION -->
   <div class="niche-section niche-food reveal" id="niche-food">
     <div class="niche-header">
       <div class="niche-icon-wrap niche-icon-food"><i class="fa fa-utensils"></i></div>
@@ -340,44 +276,20 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
       </div>
       <span class="niche-count count-food">7 Creatives</span>
     </div>
-
-    <div class="img-grid img-grid-7"
-         data-niche="food"
-         data-labels='["Food Creative 1","Food Creative 2","Food Creative 3","Food Creative 4","Food Creative 5","Food Creative 6","Food Creative 7"]'>
-      <div class="img-item" onclick="openLightbox('food',0)">
-        <img src="food_img_1.jfif" alt="Food Creative 1" loading="lazy">
-        <div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('food',1)">
-        <img src="food_img_2.png" alt="Food Creative 2" loading="lazy">
-        <div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('food',2)">
-        <img src="food_img_3.png" alt="Food Creative 3" loading="lazy">
-        <div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('food',3)">
-        <img src="food_img_4.png" alt="Food Creative 4" loading="lazy">
-        <div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('food',4)">
-        <img src="food_img_5.png" alt="Food Creative 5" loading="lazy">
-        <div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('food',5)">
-        <img src="food_img_6.png" alt="Food Creative 6" loading="lazy">
-        <div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('food',6)">
-        <img src="food_img_7.png" alt="Food Creative 7" loading="lazy">
-        <div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
+    <div class="img-grid img-grid-7">
+      <div class="img-item" onclick="openLightbox('food',0)"><img src="food_img_1.jfif" alt="Food Creative 1" loading="lazy"><div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('food',1)"><img src="food_img_2.png" alt="Food Creative 2" loading="lazy"><div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('food',2)"><img src="food_img_3.png" alt="Food Creative 3" loading="lazy"><div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('food',3)"><img src="food_img_4.png" alt="Food Creative 4" loading="lazy"><div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('food',4)"><img src="food_img_5.png" alt="Food Creative 5" loading="lazy"><div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('food',5)"><img src="food_img_6.png" alt="Food Creative 6" loading="lazy"><div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('food',6)"><img src="food_img_7.png" alt="Food Creative 7" loading="lazy"><div class="img-overlay overlay-food"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
     </div>
   </div>
 
   <div class="niche-divider" id="div-food"></div>
 
-  <!-- ===== BEVERAGE SECTION ===== -->
+  <!-- BEVERAGE SECTION -->
   <div class="niche-section niche-bev reveal" id="niche-beverage">
     <div class="niche-header">
       <div class="niche-icon-wrap niche-icon-bev"><i class="fa fa-bottle-water"></i></div>
@@ -387,48 +299,21 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
       </div>
       <span class="niche-count count-bev">8 Creatives</span>
     </div>
-
-    <div class="img-grid img-grid-8"
-         data-niche="beverage"
-         data-labels='["Fruit C Creative 1","Fruit C Creative 2","Fruit C Creative 3","Fruit C Creative 4","Fruit C Creative 5","Fruit C Creative 6","Fruit C Creative 7","Fruit C Creative 8"]'>
-      <div class="img-item" onclick="openLightbox('beverage',0)">
-        <img src="fruitc_img_1.png" alt="Fruit C Creative 1" loading="lazy">
-        <div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('beverage',1)">
-        <img src="fruitc_img_2.png" alt="Fruit C Creative 2" loading="lazy">
-        <div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('beverage',2)">
-        <img src="fruitc_img_3.png" alt="Fruit C Creative 3" loading="lazy">
-        <div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('beverage',3)">
-        <img src="fruitc_img_4.png" alt="Fruit C Creative 4" loading="lazy">
-        <div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('beverage',4)">
-        <img src="fruitc_img_5.png" alt="Fruit C Creative 5" loading="lazy">
-        <div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('beverage',5)">
-        <img src="fruitc_img_6.png" alt="Fruit C Creative 6" loading="lazy">
-        <div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('beverage',6)">
-        <img src="fruitc_img_7.png" alt="Fruit C Creative 7" loading="lazy">
-        <div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('beverage',7)">
-        <img src="fruitc_img_8.png" alt="Fruit C Creative 8" loading="lazy">
-        <div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
+    <div class="img-grid img-grid-8">
+      <div class="img-item" onclick="openLightbox('beverage',0)"><img src="fruitc_img_1.png" alt="Fruit C Creative 1" loading="lazy"><div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('beverage',1)"><img src="fruitc_img_2.png" alt="Fruit C Creative 2" loading="lazy"><div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('beverage',2)"><img src="fruitc_img_3.png" alt="Fruit C Creative 3" loading="lazy"><div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('beverage',3)"><img src="fruitc_img_4.png" alt="Fruit C Creative 4" loading="lazy"><div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('beverage',4)"><img src="fruitc_img_5.png" alt="Fruit C Creative 5" loading="lazy"><div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('beverage',5)"><img src="fruitc_img_6.png" alt="Fruit C Creative 6" loading="lazy"><div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('beverage',6)"><img src="fruitc_img_7.png" alt="Fruit C Creative 7" loading="lazy"><div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('beverage',7)"><img src="fruitc_img_8.png" alt="Fruit C Creative 8" loading="lazy"><div class="img-overlay overlay-bev"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
     </div>
   </div>
 
   <div class="niche-divider" id="div-bev"></div>
 
-  <!-- ===== CLOTHING SECTION ===== -->
+  <!-- CLOTHING SECTION -->
   <div class="niche-section niche-cloth reveal" id="niche-clothing">
     <div class="niche-header">
       <div class="niche-icon-wrap niche-icon-cloth"><i class="fa fa-shirt"></i></div>
@@ -438,32 +323,17 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
       </div>
       <span class="niche-count count-cloth">4 Creatives</span>
     </div>
-
-    <div class="img-grid img-grid-4"
-         data-niche="clothing"
-         data-labels='["Maayra Creative 1","Maayra Creative 2","Maayra Creative 3","Maayra Creative 4"]'>
-      <div class="img-item" onclick="openLightbox('clothing',0)">
-        <img src="mayra_img_1.png" alt="Maayra Creative 1" loading="lazy">
-        <div class="img-overlay overlay-cloth"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('clothing',1)">
-        <img src="mayra_img_2.png" alt="Maayra Creative 2" loading="lazy">
-        <div class="img-overlay overlay-cloth"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('clothing',2)">
-        <img src="mayra_img_3.png" alt="Maayra Creative 3" loading="lazy">
-        <div class="img-overlay overlay-cloth"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('clothing',3)">
-        <img src="mayra_img_4.png" alt="Maayra Creative 4" loading="lazy">
-        <div class="img-overlay overlay-cloth"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
+    <div class="img-grid img-grid-4">
+      <div class="img-item" onclick="openLightbox('clothing',0)"><img src="mayra_img_1.png" alt="Maayra Creative 1" loading="lazy"><div class="img-overlay overlay-cloth"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('clothing',1)"><img src="mayra_img_2.png" alt="Maayra Creative 2" loading="lazy"><div class="img-overlay overlay-cloth"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('clothing',2)"><img src="mayra_img_3.png" alt="Maayra Creative 3" loading="lazy"><div class="img-overlay overlay-cloth"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('clothing',3)"><img src="mayra_img_4.png" alt="Maayra Creative 4" loading="lazy"><div class="img-overlay overlay-cloth"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
     </div>
   </div>
 
   <div class="niche-divider" id="div-cloth"></div>
 
-  <!-- ===== SKIN CARE SECTION ===== -->
+  <!-- SKINCARE SECTION -->
   <div class="niche-section niche-skin reveal" id="niche-skincare">
     <div class="niche-header">
       <div class="niche-icon-wrap niche-icon-skin"><i class="fa fa-spa"></i></div>
@@ -473,34 +343,13 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
       </div>
       <span class="niche-count count-skin">6 Creatives</span>
     </div>
-
-    <div class="img-grid img-grid-6"
-         data-niche="skincare"
-         data-labels='["Skin Care Creative 1","Skin Care Creative 2","Skin Care Creative 3","Skin Care Creative 4","Skin Care Creative 5","Skin Care Creative 6"]'>
-      <div class="img-item" onclick="openLightbox('skincare',0)">
-        <img src="sc_img_1.jfif" alt="Skin Care Creative 1" loading="lazy">
-        <div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('skincare',1)">
-        <img src="sc_img_2.jfif" alt="Skin Care Creative 2" loading="lazy">
-        <div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('skincare',2)">
-        <img src="sc_img_3.jfif" alt="Skin Care Creative 3" loading="lazy">
-        <div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('skincare',3)">
-        <img src="sc_img_4.jfif" alt="Skin Care Creative 4" loading="lazy">
-        <div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('skincare',4)">
-        <img src="sc_img_5.jfif" alt="Skin Care Creative 5" loading="lazy">
-        <div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
-      <div class="img-item" onclick="openLightbox('skincare',5)">
-        <img src="sc_img_6.jfif" alt="Skin Care Creative 6" loading="lazy">
-        <div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div>
-      </div>
+    <div class="img-grid img-grid-6">
+      <div class="img-item" onclick="openLightbox('skincare',0)"><img src="sc_img_1.jfif" alt="Skin Care Creative 1" loading="lazy"><div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('skincare',1)"><img src="sc_img_2.jfif" alt="Skin Care Creative 2" loading="lazy"><div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('skincare',2)"><img src="sc_img_3.jfif" alt="Skin Care Creative 3" loading="lazy"><div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('skincare',3)"><img src="sc_img_4.jfif" alt="Skin Care Creative 4" loading="lazy"><div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('skincare',4)"><img src="sc_img_5.jfif" alt="Skin Care Creative 5" loading="lazy"><div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
+      <div class="img-item" onclick="openLightbox('skincare',5)"><img src="sc_img_6.jfif" alt="Skin Care Creative 6" loading="lazy"><div class="img-overlay overlay-skin"><span class="overlay-label"><i class="fa fa-expand"></i> View Full</span></div></div>
     </div>
   </div>
 
@@ -513,7 +362,8 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
           <p>Book a free strategy call and let's build something scroll-stopping together.</p>
         </div>
         <div class="cta-card-actions">
-          <a href="index.html#contact" class="btn btn-white"><i class="fa fa-calendar-check"></i> Book Free Call</a>
+          <a href="tel:9869177325" class="btn btn-white"><i class="fa fa-phone"></i> Call +91 98691 77325</a>
+          <a href="index.html#contact" class="btn btn-outline-white"><i class="fa fa-calendar-check"></i> Book Free Call</a>
           <a href="https://wa.me/91XXXXXXXXXX" class="btn btn-outline-white"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
       </div>
@@ -535,15 +385,15 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
       </div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="#">Social Media Management</a></li><li><a href="#">Content Creation</a></li><li><a href="#">Paid Ads</a></li><li><a href="#">Brand Strategy</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About CRAV</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="#">Case Studies</a></li><li><a href="#">Careers</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@crav.agency">hello@crav.agency</a></li><li><a href="index.html#contact">Book a Call</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="#">Mumbai, India</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:hello@crav.agency">hello@crav.agency</a></li><li><a href="tel:9869177325">+91 98691 77325</a></li><li><a href="index.html#contact">Book a Call</a></li><li><a href="index.html#pricing">Pricing</a></li><li><a href="#">Mumbai, India</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <div>© 2025 CRAV Agency. Built by Chaitanya, Rudra, Arush & Vedang.</div>
+      <div>&copy; 2025 CRAV Agency. Built by Chaitanya, Rudra, Arush &amp; Vedang.</div>
       <div class="footer-bottom-links"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
     </div>
   </footer>
 
-</div><!-- end .gallery-page -->
+</div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
@@ -560,20 +410,17 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
 <!-- STICKY CTA -->
 <div class="sticky-cta">
   <a href="https://wa.me/91XXXXXXXXXX" class="sticky-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  <a href="index.html#contact" class="sticky-btn"><i class="fa fa-calendar-check"></i> Book Call</a>
+  <a href="tel:9869177325" class="sticky-btn"><i class="fa fa-phone"></i> Call Now</a>
 </div>
 
 <script>
-// ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 50); });
 
-// ===== MOBILE MENU =====
 document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
 document.getElementById('closeMenu').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
 function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
 
-// ===== SCROLL REVEAL =====
 function initReveals() {
   const obs = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
@@ -582,92 +429,44 @@ function initReveals() {
 }
 initReveals();
 
-// ===== FILTER GALLERY =====
 function filterGallery(filter, btn) {
   document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-
   const sections = ['food','beverage','clothing','skincare'];
+  const divMap = { food: 'div-food', beverage: 'div-bev', clothing: 'div-cloth', skincare: 'div-skin' };
   sections.forEach(id => {
     const sec = document.getElementById('niche-' + id);
-    const div = document.getElementById('div-' + id.replace('beverage','bev').replace('clothing','cloth').replace('skincare','skin'));
-    const divMap = { food: 'div-food', beverage: 'div-bev', clothing: 'div-cloth', skincare: 'div-skin' };
     const divEl = document.getElementById(divMap[id]);
-
     const show = (filter === 'all' || filter === id);
     if (sec) {
       sec.style.display = show ? '' : 'none';
-      if (show && !sec.classList.contains('visible')) {
-        setTimeout(() => sec.classList.add('visible'), 80);
-      }
+      if (show && !sec.classList.contains('visible')) setTimeout(() => sec.classList.add('visible'), 80);
     }
     if (divEl) divEl.style.display = show ? '' : 'none';
   });
-
-  // Hide last divider when only one or no dividers needed
-  if (filter !== 'all') {
-    document.querySelectorAll('.niche-divider').forEach(d => d.style.display = 'none');
-  }
+  if (filter !== 'all') document.querySelectorAll('.niche-divider').forEach(d => d.style.display = 'none');
 }
 
-// ===== LIGHTBOX =====
 const nicheData = {
-  food: {
-    images: ['food_img_1.jfif','food_img_2.png','food_img_3.png','food_img_4.png','food_img_5.png','food_img_6.png','food_img_7.png'],
-    labels: ['Food Creative 1','Food Creative 2','Food Creative 3','Food Creative 4','Food Creative 5','Food Creative 6','Food Creative 7']
-  },
-  beverage: {
-    images: ['fruitc_img_1.png','fruitc_img_2.png','fruitc_img_3.png','fruitc_img_4.png','fruitc_img_5.png','fruitc_img_6.png','fruitc_img_7.png','fruitc_img_8.png'],
-    labels: ['Fruit C Creative 1','Fruit C Creative 2','Fruit C Creative 3','Fruit C Creative 4','Fruit C Creative 5','Fruit C Creative 6','Fruit C Creative 7','Fruit C Creative 8']
-  },
-  clothing: {
-    images: ['mayra_img_1.png','mayra_img_2.png','mayra_img_3.png','mayra_img_4.png'],
-    labels: ['Maayra Creative 1','Maayra Creative 2','Maayra Creative 3','Maayra Creative 4']
-  },
-  skincare: {
-    images: ['sc_img_1.jfif','sc_img_2.jfif','sc_img_3.jfif','sc_img_4.jfif','sc_img_5.jfif','sc_img_6.jfif'],
-    labels: ['Skin Care Creative 1','Skin Care Creative 2','Skin Care Creative 3','Skin Care Creative 4','Skin Care Creative 5','Skin Care Creative 6']
-  }
+  food: { images: ['food_img_1.jfif','food_img_2.png','food_img_3.png','food_img_4.png','food_img_5.png','food_img_6.png','food_img_7.png'], labels: ['Food Creative 1','Food Creative 2','Food Creative 3','Food Creative 4','Food Creative 5','Food Creative 6','Food Creative 7'] },
+  beverage: { images: ['fruitc_img_1.png','fruitc_img_2.png','fruitc_img_3.png','fruitc_img_4.png','fruitc_img_5.png','fruitc_img_6.png','fruitc_img_7.png','fruitc_img_8.png'], labels: ['Fruit C Creative 1','Fruit C Creative 2','Fruit C Creative 3','Fruit C Creative 4','Fruit C Creative 5','Fruit C Creative 6','Fruit C Creative 7','Fruit C Creative 8'] },
+  clothing: { images: ['mayra_img_1.png','mayra_img_2.png','mayra_img_3.png','mayra_img_4.png'], labels: ['Maayra Creative 1','Maayra Creative 2','Maayra Creative 3','Maayra Creative 4'] },
+  skincare: { images: ['sc_img_1.jfif','sc_img_2.jfif','sc_img_3.jfif','sc_img_4.jfif','sc_img_5.jfif','sc_img_6.jfif'], labels: ['Skin Care Creative 1','Skin Care Creative 2','Skin Care Creative 3','Skin Care Creative 4','Skin Care Creative 5','Skin Care Creative 6'] }
 };
 
 let lbNiche = '', lbIndex = 0;
-
-function openLightbox(niche, idx) {
-  lbNiche = niche;
-  lbIndex = idx;
-  updateLightbox();
-  document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
+function openLightbox(niche, idx) { lbNiche = niche; lbIndex = idx; updateLightbox(); document.getElementById('lightbox').classList.add('open'); document.body.style.overflow = 'hidden'; }
 function updateLightbox() {
   const data = nicheData[lbNiche];
   const img = document.getElementById('lb-img');
   img.style.opacity = '0';
-  setTimeout(() => {
-    img.src = data.images[lbIndex];
-    img.alt = data.labels[lbIndex];
-    img.style.opacity = '1';
-  }, 150);
+  setTimeout(() => { img.src = data.images[lbIndex]; img.alt = data.labels[lbIndex]; img.style.opacity = '1'; }, 150);
   document.getElementById('lb-caption').textContent = data.labels[lbIndex];
   document.getElementById('lb-counter').textContent = (lbIndex + 1) + ' / ' + data.images.length;
 }
-
-function lbNav(dir) {
-  const total = nicheData[lbNiche].images.length;
-  lbIndex = (lbIndex + dir + total) % total;
-  updateLightbox();
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function closeLightboxOutside(e) {
-  if (e.target === document.getElementById('lightbox')) closeLightbox();
-}
-
+function lbNav(dir) { const total = nicheData[lbNiche].images.length; lbIndex = (lbIndex + dir + total) % total; updateLightbox(); }
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+function closeLightboxOutside(e) { if (e.target === document.getElementById('lightbox')) closeLightbox(); }
 document.addEventListener('keydown', (e) => {
   if (!document.getElementById('lightbox').classList.contains('open')) return;
   if (e.key === 'ArrowRight') lbNav(1);
@@ -675,7 +474,6 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeLightbox();
 });
 
-// ===== CURSOR GLOW =====
 const cursor = document.createElement('div');
 cursor.style.cssText = 'position:fixed;pointer-events:none;z-index:9999;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(59,130,246,0.06),transparent 70%);transform:translate(-50%,-50%);transition:opacity 0.3s;';
 document.body.appendChild(cursor);
