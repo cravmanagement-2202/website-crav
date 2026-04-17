@@ -246,9 +246,10 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
 .reveal-delay-1{transition-delay:0.1s} .reveal-delay-2{transition-delay:0.2s} .reveal-delay-3{transition-delay:0.3s} .reveal-delay-4{transition-delay:0.4s}
 
 .sticky-cta { position: fixed; bottom: 24px; right: 24px; z-index: 998; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
-.sticky-btn { display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, var(--blue-1), var(--blue-2)); color: white; padding: 12px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; box-shadow: 0 8px 30px rgba(59,130,246,0.4); cursor: pointer; transition: all 0.3s; border: none; font-family: var(--font-body); }
-.sticky-btn:hover { transform: translateY(-3px) scale(1.05); }
+.sticky-btn { display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; background: linear-gradient(135deg, var(--blue-1), var(--blue-2)); color: white; border-radius: 50%; font-size: 1.2rem; box-shadow: 0 8px 30px rgba(59,130,246,0.4); cursor: pointer; transition: all 0.3s; border: none; }
+.sticky-btn:hover { transform: translateY(-3px) scale(1.1); box-shadow: 0 12px 36px rgba(59,130,246,0.5); }
 .sticky-btn.whatsapp { background: linear-gradient(135deg, #25d366, #128c7e); box-shadow: 0 8px 30px rgba(37,211,102,0.4); }
+.sticky-btn.whatsapp:hover { box-shadow: 0 12px 36px rgba(37,211,102,0.5); }
 
 .mobile-menu { position: fixed; inset: 0; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px); z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
 .mobile-menu.open { opacity: 1; pointer-events: all; }
@@ -427,6 +428,49 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
 .page-enter { animation: pageIn 0.5s ease forwards; }
 @keyframes pageIn { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
 
+/* ============ TERMS & CONDITIONS PAGE ============ */
+#page-terms { padding-top: 90px; }
+.terms-hero { padding: 80px 5% 50px; text-align: center; max-width: 760px; margin: 0 auto; }
+.terms-hero h1 { font-family: var(--font-head); font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 1.2rem; }
+.terms-hero p { font-size: 1.05rem; color: var(--text2); line-height: 1.7; }
+.terms-hero .terms-meta { display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.terms-hero .terms-meta span { display: flex; align-items: center; gap: 6px; font-size: 0.82rem; color: var(--text3); font-weight: 500; }
+.terms-hero .terms-meta span i { color: var(--blue-1); }
+
+.terms-notice { max-width: 800px; margin: 0 auto 2.5rem; padding: 0 5%; }
+.terms-notice-card { background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(14,165,233,0.06)); border: 1px solid rgba(59,130,246,0.2); border-radius: var(--radius2); padding: 20px 24px; display: flex; align-items: flex-start; gap: 14px; }
+.terms-notice-card i { color: var(--blue-1); font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+.terms-notice-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.7; }
+.terms-notice-card p strong { color: var(--text); }
+
+.terms-content { max-width: 800px; margin: 0 auto; padding: 0 5% 80px; }
+.terms-section { background: white; border-radius: var(--radius); padding: 32px 32px; border: 1px solid var(--border); margin-bottom: 1.2rem; transition: all 0.4s; position: relative; overflow: hidden; }
+.terms-section::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: linear-gradient(180deg, var(--blue-1), var(--blue-3)); border-radius: 4px 0 0 4px; opacity: 0; transition: opacity 0.4s; }
+.terms-section:hover { box-shadow: 0 12px 40px rgba(59,130,246,0.1); border-color: rgba(59,130,246,0.25); }
+.terms-section:hover::before { opacity: 1; }
+.terms-section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+.terms-section-num { width: 40px; height: 40px; border-radius: 12px; background: linear-gradient(135deg, rgba(59,130,246,0.1), rgba(14,165,233,0.1)); display: flex; align-items: center; justify-content: center; font-family: var(--font-head); font-weight: 800; font-size: 0.9rem; color: var(--blue-1); flex-shrink: 0; border: 1px solid rgba(59,130,246,0.15); }
+.terms-section:hover .terms-section-num { background: linear-gradient(135deg, var(--blue-1), var(--blue-3)); color: white; border-color: transparent; }
+.terms-section-header h3 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--text); }
+.terms-section p { font-size: 0.88rem; color: var(--text2); line-height: 1.75; margin-bottom: 10px; }
+.terms-section p:last-child { margin-bottom: 0; }
+.terms-section ul { list-style: none; margin: 8px 0 10px; padding: 0; }
+.terms-section ul li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.86rem; color: var(--text2); line-height: 1.7; margin-bottom: 8px; padding-left: 4px; }
+.terms-section ul li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-1); flex-shrink: 0; margin-top: 8px; }
+.terms-section ul li:last-child { margin-bottom: 0; }
+.terms-section .terms-highlight { background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.12); border-radius: 8px; padding: 12px 16px; font-size: 0.84rem; color: var(--blue-2); font-weight: 600; margin-top: 10px; display: flex; align-items: flex-start; gap: 8px; }
+.terms-section .terms-highlight i { margin-top: 2px; flex-shrink: 0; }
+
+.terms-acceptance { max-width: 800px; margin: 0 auto; padding: 0 5% 80px; }
+.terms-acceptance-card { background: linear-gradient(135deg, #1d4ed8, #0ea5e9); border-radius: var(--radius); padding: 48px 40px; text-align: center; color: white; position: relative; overflow: hidden; box-shadow: 0 30px 80px rgba(29,78,216,0.3); }
+.terms-acceptance-card::before { content: ''; position: absolute; top: -60px; right: -60px; width: 200px; height: 200px; background: rgba(255,255,255,0.06); border-radius: 50%; }
+.terms-acceptance-card::after { content: ''; position: absolute; bottom: -40px; left: -40px; width: 160px; height: 160px; background: rgba(255,255,255,0.04); border-radius: 50%; }
+.terms-acceptance-card h3 { font-family: var(--font-head); font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; position: relative; z-index: 1; }
+.terms-acceptance-card p { font-size: 0.95rem; opacity: 0.85; line-height: 1.7; max-width: 540px; margin: 0 auto; position: relative; z-index: 1; }
+.terms-acceptance-card .terms-acc-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; position: relative; z-index: 1; }
+.terms-acceptance-card .terms-acc-btns a { background: white; color: var(--blue-2); padding: 12px 24px; border-radius: 50px; font-weight: 700; font-size: 0.88rem; transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+.terms-acceptance-card .terms-acc-btns a:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.15); }
+
 @media (max-width: 1100px) {
   .pricing-grid-4 { grid-template-columns: repeat(2, 1fr); }
   .pricing-card.popular { transform: scale(1); }
@@ -461,6 +505,8 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
   .goal-options { grid-template-columns: 1fr; }
   .bento-grid { grid-template-columns: 1fr; }
   .bento-card.bento-wide, .bento-card.bento-featured { grid-column: span 1; }
+  .terms-section { padding: 24px 20px; }
+  .terms-acceptance-card { padding: 36px 24px; }
 }
 </style>
 </head>
@@ -678,7 +724,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
     </div>
     <div class="footer-bottom">
       <div>© 2025 CRAV Agency. Built by Chaitanya, Rudra, Arush &amp; Vedang.</div>
-      <div class="footer-bottom-links"><a>Privacy Policy</a><a>Terms of Service</a><a>Sitemap</a></div>
+      <div class="footer-bottom-links"><a>Privacy Policy</a><a onclick="showPage('terms')" style="cursor:pointer;font-weight:700;color:rgba(255,255,255,0.55)">Terms &amp; Conditions</a><a>Sitemap</a></div>
     </div>
   </footer>
 </div>
@@ -864,7 +910,7 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
     </div>
     <div class="footer-bottom">
       <div>© 2025 CRAV Agency. Built by Chaitanya, Rudra, Arush &amp; Vedang.</div>
-      <div class="footer-bottom-links"><a>Privacy Policy</a><a>Terms</a></div>
+      <div class="footer-bottom-links"><a>Privacy Policy</a><a onclick="showPage('terms')" style="cursor:pointer;font-weight:700;color:rgba(255,255,255,0.55)">Terms &amp; Conditions</a></div>
     </div>
   </footer>
 </div>
@@ -1077,15 +1123,225 @@ footer { background: var(--dark); color: rgba(255,255,255,0.8); padding: 70px 5%
     </div>
     <div class="footer-bottom">
       <div>© 2025 CRAV Agency. Built by Chaitanya, Rudra, Arush &amp; Vedang.</div>
-      <div class="footer-bottom-links"><a>Privacy Policy</a><a>Terms</a></div>
+      <div class="footer-bottom-links"><a>Privacy Policy</a><a onclick="showPage('terms')" style="cursor:pointer;font-weight:700;color:rgba(255,255,255,0.55)">Terms &amp; Conditions</a></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============ TERMS & CONDITIONS PAGE ============ -->
+<div id="page-terms" class="page">
+
+  <div class="terms-hero reveal">
+    <div class="section-tag"><i class="fa fa-file-contract"></i> Legal</div>
+    <h1>Terms &amp;<br><span class="gradient-text">Conditions</span></h1>
+    <p>Please read these terms carefully before engaging our services. By proceeding with payment or signing this agreement, you agree to all terms stated below.</p>
+    <div class="terms-meta">
+      <span><i class="fa fa-calendar-days"></i> Last Updated: April 2025</span>
+      <span><i class="fa fa-shield-halved"></i> CRAV Agency</span>
+    </div>
+  </div>
+
+  <div class="terms-notice reveal">
+    <div class="terms-notice-card">
+      <i class="fa fa-circle-info"></i>
+      <p><strong>Important Notice:</strong> These conditions are entered into with the knowledge and consent of a parent/legal guardian, as the Agency is operated by individuals under the age of 18.</p>
+    </div>
+  </div>
+
+  <div class="terms-content">
+
+    <!-- 1. Scope of Services -->
+    <div class="terms-section reveal reveal-delay-1">
+      <div class="terms-section-header">
+        <div class="terms-section-num">1</div>
+        <h3>Scope of Services</h3>
+      </div>
+      <p>The Agency agrees to provide the following services:</p>
+      <ul>
+        <li>Social media account management</li>
+        <li>Content creation (posts, reels, graphics, captions)</li>
+        <li>Posting and scheduling</li>
+        <li>Basic analytics and performance tracking</li>
+      </ul>
+      <div class="terms-highlight"><i class="fa fa-circle-info"></i> The exact number of deliverables, such as posts, reels, etc, will be agreed upon separately in writing.</div>
+    </div>
+
+    <!-- 2. Payment Terms -->
+    <div class="terms-section reveal reveal-delay-2">
+      <div class="terms-section-header">
+        <div class="terms-section-num">2</div>
+        <h3>Payment Terms</h3>
+      </div>
+      <ul>
+        <li>Payment must be made 50% advance before work begins.</li>
+        <li>Remaining payment (if applicable) must be completed within the days of your plan.</li>
+        <li>Late payments may result in delayed services or suspension of work.</li>
+        <li>All payments are non-refundable once work has commenced.</li>
+      </ul>
+    </div>
+
+    <!-- 3. No Guaranteed Results -->
+    <div class="terms-section reveal reveal-delay-3">
+      <div class="terms-section-header">
+        <div class="terms-section-num">3</div>
+        <h3>No Guaranteed Results</h3>
+      </div>
+      <p>The Agency does not guarantee specific results, including but not limited to:</p>
+      <ul>
+        <li>Follower growth</li>
+        <li>Engagement rates</li>
+        <li>Sales or conversions</li>
+      </ul>
+      <p>Performance depends on multiple external factors beyond the Agency's control.</p>
+    </div>
+
+    <!-- 4. Content Approval -->
+    <div class="terms-section reveal reveal-delay-1">
+      <div class="terms-section-header">
+        <div class="terms-section-num">4</div>
+        <h3>Content Approval</h3>
+      </div>
+      <ul>
+        <li>All content will be shared with the Client for approval before posting (unless otherwise agreed).</li>
+        <li>The Client must respond within 24–48 hours.</li>
+        <li>If no response is received, the Agency reserves the right to proceed or delay posting.</li>
+      </ul>
+    </div>
+
+    <!-- 5. Revisions Policy -->
+    <div class="terms-section reveal reveal-delay-2">
+      <div class="terms-section-header">
+        <div class="terms-section-num">5</div>
+        <h3>Revisions Policy</h3>
+      </div>
+      <ul>
+        <li>The Client is entitled to 2–3 revisions per content piece.</li>
+        <li>Additional revisions may be subject to extra charges.</li>
+      </ul>
+    </div>
+
+    <!-- 6. Account Access & Security -->
+    <div class="terms-section reveal reveal-delay-3">
+      <div class="terms-section-header">
+        <div class="terms-section-num">6</div>
+        <h3>Account Access &amp; Security</h3>
+      </div>
+      <ul>
+        <li>The Client must provide necessary access to social media accounts or approve posting methods.</li>
+        <li>The Agency is not responsible for issues such as hacking, platform errors, or account bans.</li>
+      </ul>
+    </div>
+
+    <!-- 7. Confidentiality -->
+    <div class="terms-section reveal reveal-delay-1">
+      <div class="terms-section-header">
+        <div class="terms-section-num">7</div>
+        <h3>Confidentiality</h3>
+      </div>
+      <p>Both parties agree to keep all sensitive information confidential, including strategies, account data, and business details.</p>
+    </div>
+
+    <!-- 8. Termination -->
+    <div class="terms-section reveal reveal-delay-2">
+      <div class="terms-section-header">
+        <div class="terms-section-num">8</div>
+        <h3>Termination</h3>
+      </div>
+      <ul>
+        <li>Either party may terminate this agreement with 7–15 days notice.</li>
+        <li>No refunds will be issued for work already completed.</li>
+        <li>Pending payments must still be cleared upon termination.</li>
+      </ul>
+    </div>
+
+    <!-- 9. Ownership of Content -->
+    <div class="terms-section reveal reveal-delay-3">
+      <div class="terms-section-header">
+        <div class="terms-section-num">9</div>
+        <h3>Ownership of Content</h3>
+      </div>
+      <ul>
+        <li>Upon full payment, the Client will own the final approved content.</li>
+        <li>The Agency reserves the right to showcase the work in its portfolio unless otherwise agreed.</li>
+      </ul>
+    </div>
+
+    <!-- 10. Limitation of Liability -->
+    <div class="terms-section reveal reveal-delay-1">
+      <div class="terms-section-header">
+        <div class="terms-section-num">10</div>
+        <h3>Limitation of Liability</h3>
+      </div>
+      <p>The Agency shall not be held liable for:</p>
+      <ul>
+        <li>Algorithm changes</li>
+        <li>Platform restrictions or bans</li>
+        <li>Business losses or reduced performance</li>
+      </ul>
+    </div>
+
+    <!-- 11. Communication -->
+    <div class="terms-section reveal reveal-delay-2">
+      <div class="terms-section-header">
+        <div class="terms-section-num">11</div>
+        <h3>Communication</h3>
+      </div>
+      <ul>
+        <li>Working hours: 11 AM – 7 PM</li>
+        <li>Response time: Within 24 hours on business days</li>
+      </ul>
+    </div>
+
+    <!-- 12. Legal & Guardian Clause -->
+    <div class="terms-section reveal reveal-delay-3">
+      <div class="terms-section-header">
+        <div class="terms-section-num">12</div>
+        <h3>Legal &amp; Guardian Clause</h3>
+      </div>
+      <p>As the Agency is operated by individuals under the age of 18, this agreement is entered into under the supervision and consent of a parent/legal guardian. Payments may be processed under a guardian's name/account.</p>
+    </div>
+
+  </div>
+
+  <!-- Acceptance CTA -->
+  <div class="terms-acceptance reveal">
+    <div class="terms-acceptance-card">
+      <h3><i class="fa fa-handshake" style="margin-right:10px"></i>13. Acceptance</h3>
+      <p>By proceeding with payment or signing this agreement, the Client agrees to all terms stated above. If you have any questions, please don't hesitate to reach out to our team.</p>
+      <div class="terms-acc-btns">
+        <a onclick="showPage('contact')" style="cursor:pointer"><i class="fa fa-paper-plane"></i> Contact Us</a>
+        <a href="tel:9869177325"><i class="fa fa-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo">CRAV</div>
+        <p>We Handle Social.<br>You Handle Business.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a>Social Media Management</a></li><li><a>Content Creation</a></li><li><a>Paid Ads</a></li><li><a>Brand Strategy</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a>About CRAV</a></li><li><a>Case Studies</a></li><li><a>Blog</a></li><li><a>Careers</a></li></ul></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a onclick="showPage('pricing')">Pricing</a></li><li><a href="tel:9869177325">+91 98691 77325</a></li><li><a href="mailto:hello@crav.agency">Email Us</a></li><li><a>Mumbai, India</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 CRAV Agency. Built by Chaitanya, Rudra, Arush &amp; Vedang.</div>
+      <div class="footer-bottom-links"><a>Privacy Policy</a><a onclick="showPage('terms')" style="cursor:pointer;font-weight:700;color:rgba(255,255,255,0.55)">Terms &amp; Conditions</a></div>
     </div>
   </footer>
 </div>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta">
-  <a href="https://wa.me/918655771045" class="sticky-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-  <a href="tel:9869177325" class="sticky-btn"><i class="fa fa-phone"></i> Call Now</a>
+  <a href="https://wa.me/918655771045" class="sticky-btn whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <a href="tel:9869177325" class="sticky-btn" title="Call Now"><i class="fa fa-phone"></i></a>
 </div>
 
 <script>
